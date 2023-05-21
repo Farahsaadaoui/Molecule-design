@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Home</title>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         color: #ffffff;
+         margin: 0;
+         padding: 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         min-height: 100vh;
+      }
+      #background-video {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: -1;
+      }
+      h1 {
+         color: #ffffff;
+         font-size: 48px;
+         margin-bottom: 20px;
+         text-align: center;
+      }
+      h2 {
+         color: #ffffff;
+         font-size: 32px;
+         margin-bottom: 10px;
+         text-align: center;
+      }
+      ul {
+         list-style-type: none;
+         padding: 0;
+         margin: 0;
+      }
+      li {
+         margin-bottom: 10px;
+      }
+      .btn {
+         width: 150px;
+         background-color: #c5b9ba9a;
+         border: none;
+         outline: none;
+         height: 49px;
+         border-radius: 49px;
+         color: #fff;
+         text-transform: uppercase;
+         font-weight: 600;
+         margin: 10px 0;
+         cursor: pointer;
+         transition: 0.5s;
+         box-shadow: 0 2px 5px  rgba(0, 0, 0, 0.6);
+         text-align: center;
+         text-decoration: none;
+         line-height: 49px;
+      }
+      .btn:hover {
+         background-color: #42a5f5;
+      }
+   </style>
+</head>
+<body>
+   <video id="background-video" autoplay loop muted>
+      <source src="/static/videos/back_vid2.mp4" type="video/mp4">
+   </video>
+   <h1>Welcome to the Molecule Design App</h1>
+   <h2>Choose a Functionality:</h2>
+   <ul>
+      <li><a href="{{ url_for('generate_molecule_page') }}" class="btn">Generate Molecule</a></li>
+      <li><a href="{{ url_for('predict_properties_page') }}" class="btn">Predict Properties</a></li>
+      <li><a href="{{ url_for('toxicity_prediction_page') }}" class="btn">Toxicity Prediction</a></li>
+      <li><a href="{{ url_for('find_similar_molecules_page') }}" class="btn">Find Similar Molecules</a></li>
+      <li><a href="{{ url_for('visualization_page') }}" class="btn">2D Visualization</a></li>
+   </ul>
+</body>
+</html>
+
+
+
+
+
+

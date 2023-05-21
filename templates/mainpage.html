@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>My Page</title>
+      <style>
+         body {
+            background-image: url("/static/img/white.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;           
+            background-position: left left;
+            font-family: Arial, sans-serif;
+            color: #131212;
+         }
+         header {
+            background-color: #e93654e8;
+            color: #ffffff;
+            padding: 30px;
+         }
+         nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+         }
+         nav li {
+            display: inline-block;
+            margin-right: 20px;
+         }
+         nav li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+         }
+         .nav-icon {
+            width: 50px; /* Adjust the width as needed */
+            height: 50px; /* Adjust the height as needed */
+            margin-right: 5px;
+            display: flex;
+            align-items: center;
+         }
+         .nav-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+         }
+         .nav-text {
+            display: none;
+         }
+         nav li a:hover {
+            background-color: #dd5a5a;
+         }
+         nav li a:hover .nav-text {
+            display: inline;
+         }
+         .centered-nav {
+            text-align: center;
+         }
+         .options {
+            margin-top: 50px;
+            text-align: center;
+         }
+         .options a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+            background-color: #d3c1d6;
+         }
+         .options a:hover {
+            background-color: #f7bbcf;
+            color: #ffffff;
+         }
+         .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+         }
+         .article {
+            margin: 50px;
+         }
+         .article h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+         }
+         .article p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+         }
+         .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+         }
+         h1 {
+            text-align: center;
+            font-size: 48px;
+            margin-top: 50px;
+         }
+         .intro {
+            text-align: justify;
+            margin-top: 30px;
+            font-size: 20px;
+            line-height: 1.5;
+         }
+         .image-container {
+            text-align: center;
+            margin-top: 50px;
+         }
+         .image-container img {
+            max-width: 100%;
+         }
+         .quote {
+            font-size: 24px;
+            font-style: italic;
+            text-align: center;
+            margin-top: 50px;
+         }
+         .url-display {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+         }
+         #contentFrame {
+            width: 100%;
+            height: 100vh;
+            border: none;
+         }
+        
+      </style>
+   </head>
+   <body>
+      <header>
+         <nav>
+            <div class="centered-nav">
+               <ul>
+                  <li><a href="#" onclick="loadContent('/home_page')"><i class="nav-icon"><img src="/static/img/hoomm.png" alt="Home Icon"></i><span class="nav-text">Home</span></a></li>
+                  <li><a href="#" onclick="loadContent('/generate_molecule')"><i class="nav-icon"><img src="/static/img/gene.png" alt="Molecule Icon"></i><span class="nav-text">Generate Molecule</span></a></li>
+                  <li><a href="#" onclick="loadContent('/predict_properties')"><i class="nav-icon"><img src="/static/img/propp.png" alt="Properties Icon"></i><span class="nav-text">Predict Properties</span></a></li>
+                  <li><a href="#" onclick="loadContent('/toxicity_prediction')"><i class="nav-icon"><img src="/static/img/toxic.png" alt="Toxicity Icon"></i><span class="nav-text">Toxicity Prediction</span></a></li>
+                  <li><a href="#" onclick="loadContent('/find_similar_molecules')"><i class="nav-icon"><img src="/static/img/sim.png" alt="Similar Icon"></i><span class="nav-text">Find Similar Molecules</span></a></li>
+                  <li><a href="#" onclick="loadContent('/visualization')"><i class="nav-icon"><img src="/static/img/2d.png" alt="Visualization Icon"></i><span class="nav-text">2D Visualization</span></a></li>
+                  <li><a href="/logout"><i class="nav-icon"><img src="/static/img/logout.png" alt="Logout Icon"></i><span class="nav-text">Logout</span></a></li>
+
+               </ul>
+            </div>
+         </nav>
+      </header>
+      
+      <iframe id="contentFrame" src="" frameborder="0"></iframe>
+
+      <script>
+         window.addEventListener("DOMContentLoaded", function () {
+            loadContent('/home_page');
+         });
+      
+         function loadContent(url) {
+            var frame = document.getElementById('contentFrame');
+            var urlDisplay = document.getElementById('urlDisplay');
+      
+            frame.src = url;
+            urlDisplay.textContent = "URL: " + url;
+            document.getElementById('contact').style.display = 'none'; // Hide the contact section
+         }
+      </script>
+   </body>
+</html>
